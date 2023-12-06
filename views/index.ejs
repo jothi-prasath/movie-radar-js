@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+  <nav>
+      <h1>Movie Radar</h1>
+  </nav>
+  <ul class="movie-list">
+    <% movies.forEach(function(movie) { %>
+    <li class="movie-item">
+      <img class="movie-poster" src="<%= movie.poster_url %>" alt="<%= movie.title %> Poster">
+      <div class="movie-details">
+        <h2 class="movie-title"><%= movie.title %></h2>
+        <p class="movie-release-date">Release Date: <%= movie.release_date %></p>
+        <p class="movie-overview"><%= movie.overview %></p>
+      </div>
+    </li>
+    <% }); %>
+  </ul>
+</body>
+
+</html>
